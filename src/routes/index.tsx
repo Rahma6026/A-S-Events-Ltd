@@ -1,26 +1,44 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Navbar } from "@/components/site/Navbar";
+import { Hero } from "@/components/site/Hero";
+import { Welcome } from "@/components/site/Welcome";
+import { About } from "@/components/site/About";
+import { Services } from "@/components/site/Services";
+import { Process } from "@/components/site/Process";
+import { Features } from "@/components/site/Features";
+import { Contact } from "@/components/site/Contact";
+import { Footer } from "@/components/site/Footer";
+import { useRevealAll } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: "Dreamy Daisies — Event Management & Convention Hall" },
+      {
+        name: "description",
+        content:
+          "Dreamy Daisies Convention Hall — premium event management for weddings, concerts, conferences and celebrations in London.",
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+function Index() {
+  useRevealAll();
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
+    <div className="min-h-screen bg-background text-foreground">
+      <Navbar />
+      <main>
+        <Hero />
+        <Welcome />
+        <About />
+        <Services />
+        <Process />
+        <Features />
+        <Contact />
+      </main>
+      <Footer />
     </div>
   );
-}
-
-function Index() {
-  return <PlaceholderIndex />;
 }
