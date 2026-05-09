@@ -21,14 +21,22 @@ const features = [
   },
 ];
 
+import featuresBg from "@/assets/features-bg.png";
+
 export function Features() {
   return (
-    <section className="relative py-28">
-      <div className="container mx-auto px-6">
+    <section className="relative py-28 overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center"
+        style={{ backgroundImage: `url(${featuresBg})` }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-background/85" aria-hidden="true" />
+      <div className="container relative mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16 reveal" data-reveal>
           <p className="text-xs tracking-[0.3em] uppercase text-gold">— Features</p>
           <h2 className="font-display text-4xl md:text-6xl mt-4">
-            Why Choose <span className="italic text-gradient-gold">Dreamy Daisies?</span>
+            Why Choose <span className="italic text-gradient-gold">AS Events Ltd?</span>
           </h2>
           <div className="gold-divider mx-auto my-6" />
           <p className="text-muted-foreground">
