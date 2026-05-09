@@ -24,7 +24,7 @@ export function Welcome() {
             Where Every Gathering Unfolds Like a Love Letter
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            At Dreamy Daisies, we believe a celebration is more than an occasion —
+            At AS Events Ltd, we believe a celebration is more than an occasion —
             it is a story written in candlelight, florals and quiet detail.
             Set within a contemporary hall framed by soft architecture and warm
             gold accents, our venue is shaped to hold the moments that matter
