@@ -15,11 +15,7 @@ export function Hero() {
         poster="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=70&auto=format&fit=crop"
       >
         <source
-          src="https://cdn.coverr.co/videos/coverr-a-wedding-ceremony-2633/1080p.mp4"
-          type="video/mp4"
-        />
-        <source
-          src="https://videos.pexels.com/video-files/3197908/3197908-uhd_2560_1440_25fps.mp4"
+          src="https://assets.mixkit.co/videos/5213/5213-720.mp4"
           type="video/mp4"
         />
       </video>
