@@ -5,9 +5,9 @@ export function Footer() {
         <div>
           <h3 className="font-display text-3xl text-gradient-gold">Dreamy Daisies</h3>
           <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
-            We don't just provide space — we create experiences. Your event is more
-            than a date on the calendar. It's a chance to bring people together
-            and create memories that bloom long after the day is over.
+            We do not simply offer a venue — we compose experiences. Your
+            celebration is not a date on a calendar; it is a chapter, written in
+            light, music and the company you keep.
           </p>
         </div>
         <div>

@@ -1,44 +1,44 @@
 const services = [
   {
-    title: "Sports Event Coordination",
-    img: "https://dreamydaisies.co.uk/wp-content/uploads/2025/08/pexels-vince-32020828-scaled.jpg",
-    desc: "From professional tournaments to community sports days, we organize sports events that leave a lasting impression — permits, sponsorships, logistics and promotion handled end-to-end.",
+    title: "Signature Weddings",
+    img: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=900&q=80&auto=format&fit=crop",
+    desc: "From the first proposal to the final farewell, we orchestrate weddings with quiet precision — vendor curation, day-of choreography and the kind of detail that turns a ceremony into folklore.",
   },
   {
-    title: "Wedding Planning & Coordination",
-    img: "https://dreamydaisies.co.uk/wp-content/uploads/2025/07/pexels-amar-10360900-scaled.jpg",
-    desc: "Your wedding day is everything you've ever dreamed of and more. From consultations and vendors to timelines and on-site coordination — every detail with care.",
+    title: "Intimate Ceremonies",
+    img: "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=900&q=80&auto=format&fit=crop",
+    desc: "For elopements, vow renewals and family-only gatherings — soft florals, candlelit settings and an atmosphere that lets the smallest moments feel monumental.",
   },
   {
-    title: "Conferences & Workshops",
-    img: "https://dreamydaisies.co.uk/wp-content/uploads/2025/07/pexels-bertellifotografia-3321796-scaled.jpg",
-    desc: "Corporate events, motivational talks and workshops in a polished setting — full AV support, Wi-Fi, technical staff and flexible seating layouts.",
+    title: "Conferences & Salons",
+    img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80&auto=format&fit=crop",
+    desc: "Refined corporate gatherings, panels and creative workshops — full AV, fibre Wi-Fi, technical direction and seating layouts tailored to dialogue.",
   },
   {
     title: "Concerts & Recitals",
-    img: "https://dreamydaisies.co.uk/wp-content/uploads/2025/07/pexels-wendywei-2350325-scaled.jpg",
-    desc: "Turn up the volume and light up the night — elevated stage, premium sound system, modern lighting, backstage and audience seating.",
+    img: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=900&q=80&auto=format&fit=crop",
+    desc: "An elevated stage, mastered acoustics and architectural lighting — built for chamber recitals, acoustic sets and full-band productions alike.",
   },
   {
-    title: "Sports Award Nights",
-    img: "https://dreamydaisies.co.uk/wp-content/uploads/2025/07/pexels-caleboquendo-15689008-scaled.jpg",
-    desc: "Award nights and post-game banquets in a hall that celebrates athletic achievement — LED display, branded signage and team seating.",
+    title: "Galas & Award Nights",
+    img: "https://images.unsplash.com/photo-1530023367847-a683933f4172?w=900&q=80&auto=format&fit=crop",
+    desc: "Black-tie evenings deserve a setting to match — bespoke staging, branded signage, LED scenography and seating that honours every guest of the night.",
   },
   {
-    title: "Photography & Videography",
-    img: "https://dreamydaisies.co.uk/wp-content/uploads/2025/07/pexels-caleboquendo-2918590-scaled.jpg",
-    desc: "Cinematic photo & video coverage — pre-event, full-day, drone, same-day reels, live streaming and bespoke photo booths.",
+    title: "Editorial Photography & Film",
+    img: "https://images.unsplash.com/photo-1554080353-a576cf803bda?w=900&q=80&auto=format&fit=crop",
+    desc: "Cinematic stills and motion — pre-event portraits, full-day coverage, aerial work, same-day reels and considered live streaming.",
   },
 ];
 
 const addOns = [
-  "Catering (Multi-cuisine)",
-  "Themed décor & stage props",
-  "Event host / Emcee",
-  "DJ & live music booking",
-  "Valet & security services",
-  "Custom invitation design",
-  "Live event streaming",
+  "Multi-cuisine catering",
+  "Bespoke décor & stage design",
+  "Hosts & masters of ceremony",
+  "DJ, string quartet & live ensembles",
+  "Valet parking & discreet security",
+  "Hand-illustrated invitations",
+  "Live broadcast & streaming",
 ];
 
 export function Services() {
@@ -52,8 +52,9 @@ export function Services() {
           </h2>
           <div className="gold-divider mx-auto my-6" />
           <p className="text-muted-foreground">
-            Celebrate every occasion with style and ease. From intimate gatherings
-            to large-scale productions — flawless execution, every time.
+            Every gathering deserves the same considered hand. From candlelit
+            ceremonies to grand-stage productions — composed with care, executed
+            with grace.
           </p>
         </div>
 

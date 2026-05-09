@@ -13,9 +13,9 @@ export function Contact() {
           </h2>
           <div className="gold-divider mx-auto my-6" />
           <p className="text-muted-foreground">
-            Whether it's love, achievement, tradition or creativity — we welcome
-            every event with open arms and meticulous care. Let's start planning
-            something extraordinary.
+            Whether it's a vow, a milestone or a quiet tradition — share the
+            outline of your day, and we'll begin shaping something the years
+            will be kind to.
           </p>
         </div>
 
@@ -57,7 +57,7 @@ export function Contact() {
           </form>
 
           <div data-reveal className="reveal-right space-y-8">
-            <h3 className="font-display text-3xl text-gold-soft">Please Call or Visit Us!</h3>
+            <h3 className="font-display text-3xl text-gold-soft">We'd Love to Hear From You</h3>
             {[
               { t: "Phone", v: "02036 000 248", icon: "☎" },
               { t: "Email", v: "admin@dreamydaisies.co.uk", icon: "✉" },

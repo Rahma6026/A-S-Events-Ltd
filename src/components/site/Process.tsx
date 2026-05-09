@@ -1,9 +1,9 @@
 const steps = [
-  { n: "01", t: "Consultation", d: "Share your event vision, date, budget, and preferences." },
-  { n: "02", t: "Custom Proposal", d: "We tailor a package based on your needs, with transparent pricing." },
-  { n: "03", t: "Site Visit & Design", d: "Walk through our hall and explore décor and setup options." },
-  { n: "04", t: "Booking Confirmation", d: "Confirm your date with a deposit and start the countdown." },
-  { n: "05", t: "Event Day Management", d: "We handle logistics — you focus on celebrating." },
+  { n: "01", t: "Discovery", d: "An unhurried conversation about your vision, guests, dates and dreams." },
+  { n: "02", t: "Considered Proposal", d: "A tailored package with transparent pricing and thoughtful options — no fine print." },
+  { n: "03", t: "Walkthrough & Design", d: "Tour the hall, refine your colour story, florals and staging with our atelier." },
+  { n: "04", t: "Confirmation", d: "Secure your date with a deposit and we begin the quiet choreography behind the scenes." },
+  { n: "05", t: "The Day Itself", d: "We hold every detail so you can be fully present — composed, calm, celebrated." },
 ];
 
 export function Process() {
@@ -19,8 +19,8 @@ export function Process() {
             </h2>
             <div className="gold-divider" />
             <img
-              src="https://dreamydaisies.co.uk/wp-content/uploads/2025/07/pexels-vidalbalielojrfotografia-12688994-scaled.jpg"
-              alt="Planning"
+              src="https://images.unsplash.com/photo-1478146896981-b80fe463b330?w=900&q=80&auto=format&fit=crop"
+              alt="Designer planning event with floral mood board"
               className="w-full aspect-video object-cover rounded-sm shadow-elegant"
             />
             <a

@@ -5,8 +5,8 @@ export function Welcome() {
         <div className="reveal-left" data-reveal>
           <div className="relative">
             <img
-              src="https://dreamydaisies.co.uk/wp-content/uploads/2025/07/pexels-cottonbro-6651864-scaled.jpg"
-              alt="Convention hall"
+              src="https://images.unsplash.com/photo-1464366400600-7168b8af9bc3?w=900&q=80&auto=format&fit=crop"
+              alt="Elegantly styled banquet table with candles and florals"
               className="w-full aspect-[4/5] object-cover rounded-sm shadow-elegant hover:scale-[1.02] transition-transform duration-[1.2s]"
             />
             <div className="absolute -bottom-8 -right-8 h-40 w-40 border-2 border-gold/50 rounded-full hidden md:block" />
@@ -21,19 +21,19 @@ export function Welcome() {
           </h2>
           <div className="gold-divider" />
           <p className="text-lg text-foreground/85 italic font-display">
-            Where Every Event Blooms Into a Beautiful Memory
+            Where Every Gathering Unfolds Like a Love Letter
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            At Dreamy Daisies Convention Hall, we believe that every moment worth
-            celebrating deserves a venue that reflects its significance. Nestled
-            in a prime location with contemporary architecture and a touch of
-            elegance, our hall is designed to host your most cherished events —
-            whether it's a fairy-tale wedding, a lively birthday bash, an
-            inspiring seminar, or a grand concert.
+            At Dreamy Daisies, we believe a celebration is more than an occasion —
+            it is a story written in candlelight, florals and quiet detail.
+            Set within a contemporary hall framed by soft architecture and warm
+            gold accents, our venue is shaped to hold the moments that matter
+            most: vows whispered, milestones honoured, friendships rekindled.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            Our versatile space, state-of-the-art facilities, and dedicated team
-            make Dreamy Daisies the perfect canvas for your dream occasion.
+            With a versatile canvas, considered acoustics and a team devoted to
+            grace under pressure, we turn the everyday into something quietly
+            extraordinary.
           </p>
         </div>
       </div>
