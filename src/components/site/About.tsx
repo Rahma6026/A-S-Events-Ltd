@@ -9,20 +9,20 @@ export function About() {
           </h2>
           <div className="gold-divider" />
           <p className="text-lg text-foreground/85 italic font-display">
-            A Place Where Dreams Blossom Into Reality
+            A Sanctuary Where Cherished Moments Quietly Bloom
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            Dreamy Daisies Convention Hall was born out of a vision to create a
-            venue where people from all walks of life could gather and celebrate
-            life's most meaningful moments. With years of experience in event
-            hosting and hospitality, we've curated a space that combines
-            functionality, beauty, and comfort.
+            Dreamy Daisies began with a simple intention — to build a hall where
+            people could gather without compromise, surrounded by craftsmanship,
+            warm hospitality and unhurried elegance. Years of curating weddings,
+            galas and intimate ceremonies have shaped a space that feels equally
+            grand and grounded.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            Our name, "Dreamy Daisies," reflects the spirit of joyful celebration
-            and natural beauty. Just like daisies blooming in the sunlight, we
-            want your events to flourish with happiness, creativity, and lasting
-            impressions.
+            Our name draws from the daisy — modest, luminous, enduring. It is
+            our promise that every event we host will carry that same spirit:
+            understated beauty, considered detail, and joy that lingers long
+            after the last guest departs.
           </p>
           <a
             href="#services"
@@ -34,8 +34,8 @@ export function About() {
 
         <div className="reveal-zoom relative" data-reveal>
           <img
-            src="https://dreamydaisies.co.uk/wp-content/uploads/2025/07/pexels-pavel-danilyuk-7234410-scaled.jpg"
-            alt="Elegant setup"
+            src="https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=900&q=80&auto=format&fit=crop"
+            alt="Soft floral wedding centerpiece in candlelight"
             className="w-full aspect-[4/5] object-cover rounded-[50%] shadow-elegant"
           />
           <div className="absolute inset-0 rounded-[50%] border-2 border-gold/30 animate-float" />

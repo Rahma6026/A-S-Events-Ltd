@@ -18,7 +18,7 @@ export function Hero() {
             className="text-xs md:text-sm tracking-[0.3em] uppercase text-gold animate-fade-down"
             style={{ animationDelay: "0.1s" }}
           >
-            ✦ Where Dreams Blossom Into Reality
+            ✦ Crafted Moments · Curated Beautifully
           </p>
 
           <h1
@@ -26,16 +26,17 @@ export function Hero() {
             style={{ animationDelay: "0.25s" }}
           >
             Dreamy Daisies <br />
-            <span className="italic text-gradient-gold">Event</span> <br />
-            Management
+            <span className="italic text-gradient-gold">Bespoke</span> <br />
+            Celebrations
           </h1>
 
           <p
             className="text-lg text-muted-foreground max-w-lg animate-fade-up"
             style={{ animationDelay: "0.45s" }}
           >
-            A premium convention hall and full-service event team — turning weddings,
-            concerts, and celebrations into unforgettable, blooming memories.
+            A timeless convention hall and atelier of event artisans — composing
+            weddings, soirées and milestones into heirloom-worthy memories,
+            petal by petal.
           </p>
 
           <div
@@ -66,8 +67,8 @@ export function Hero() {
             style={{ animationDelay: "0.4s" }}
           >
             <img
-              src="https://dreamydaisies.co.uk/wp-content/uploads/2025/07/pexels-2997777-5005252-scaled.jpg"
-              alt="Wedding celebration"
+              src="https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80&auto=format&fit=crop"
+              alt="Romantic wedding ceremony with floral arch"
               className="w-full h-full object-cover hover:scale-110 transition-transform duration-[1.2s]"
             />
           </div>
@@ -77,8 +78,8 @@ export function Hero() {
             style={{ animationDelay: "0.65s" }}
           >
             <img
-              src="https://dreamydaisies.co.uk/wp-content/uploads/2025/07/pexels-roman-odintsov-8355534-scaled.jpg"
-              alt="Floral decor"
+              src="https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=700&q=80&auto=format&fit=crop"
+              alt="Soft pastel floral bouquet"
               className="w-full h-full object-cover hover:scale-110 transition-transform duration-[1.2s]"
             />
           </div>
@@ -91,7 +92,7 @@ export function Hero() {
               </defs>
               <text fill="currentColor" fontSize="14" letterSpacing="4">
                 <textPath href="#circlePath">
-                  ✦ FLOWER FARM FOR YOUR EVENTS  ✦  DREAMY DAISIES  
+                  ✦ ATELIER OF CELEBRATIONS  ✦  DREAMY DAISIES  
                 </textPath>
               </text>
             </svg>
