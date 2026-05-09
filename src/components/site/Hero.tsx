@@ -4,8 +4,28 @@ export function Hero() {
       id="home"
       className="relative min-h-screen flex items-center overflow-hidden bg-hero pt-28"
     >
-      {/* decorative background */}
-      <div className="absolute inset-0 bg-noise opacity-30 pointer-events-none" />
+      {/* video background */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover z-0"
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="auto"
+        poster="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=70&auto=format&fit=crop"
+      >
+        <source
+          src="https://cdn.coverr.co/videos/coverr-a-wedding-ceremony-2633/1080p.mp4"
+          type="video/mp4"
+        />
+        <source
+          src="https://videos.pexels.com/video-files/3197908/3197908-uhd_2560_1440_25fps.mp4"
+          type="video/mp4"
+        />
+      </video>
+      {/* dark overlay for readability */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-background/60 to-background/90 z-[1]" />
+      <div className="absolute inset-0 bg-noise opacity-30 pointer-events-none z-[1]" />
       <div className="absolute -top-40 -right-40 h-[480px] w-[480px] rounded-full bg-gold/10 blur-3xl animate-float" />
       <div className="absolute -bottom-40 -left-40 h-[480px] w-[480px] rounded-full bg-gold/5 blur-3xl animate-float [animation-delay:2s]" />
 
