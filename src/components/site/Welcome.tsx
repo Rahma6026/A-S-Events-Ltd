@@ -17,7 +17,7 @@ export function Welcome() {
         <div className="reveal-right space-y-6" data-reveal>
           <p className="text-xs tracking-[0.3em] uppercase text-gold">— Welcome</p>
           <h2 className="font-display text-4xl md:text-6xl leading-tight">
-            Welcome to <span className="italic text-gradient-gold">Dreamy Daisies</span>
+            Welcome to <span className="italic text-gradient-gold">AS Events Ltd</span>
           </h2>
           <div className="gold-divider" />
           <p className="text-lg text-foreground/85 italic font-display">
