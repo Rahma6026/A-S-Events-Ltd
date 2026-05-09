@@ -1,22 +1,22 @@
 const features = [
   {
-    title: "Flexible Venue for All Occasions",
-    desc: "From small intimate events to large-scale productions — flexible packages and setups for every guest count, theme and budget.",
+    title: "A Hall for Every Occasion",
+    desc: "From candlelit dinners for thirty to grand productions for a thousand — modular layouts, considered packages, no compromise.",
     icon: "❀",
   },
   {
-    title: "Modern Facilities",
-    desc: "Air-conditioned hall with ample parking, clean restrooms, changing rooms, soundproofing, mood lighting and security cameras.",
+    title: "Quietly Modern Facilities",
+    desc: "Climate-controlled interiors, generous parking, suite-style green rooms, mastered acoustics, layered lighting and discreet security.",
     icon: "✦",
   },
   {
-    title: "Convenient Location",
-    desc: "Easily accessible with nearby public transport and major roads — your guests arrive on time, every time.",
+    title: "Effortless Arrival",
+    desc: "Set within easy reach of major roads and transit — your guests cross the threshold composed, never rushed.",
     icon: "❖",
   },
   {
-    title: "Tailored Décor & Setup",
-    desc: "Bollywood-themed wedding or minimalist seminar setup — we customize stage, lighting, seating and entrance décor to match your theme.",
+    title: "Couture Décor & Styling",
+    desc: "From heritage motifs to minimalist editorial — staging, florals, lighting and entrances designed in conversation with your story.",
     icon: "✿",
   },
 ];
@@ -32,8 +32,8 @@ export function Features() {
           </h2>
           <div className="gold-divider mx-auto my-6" />
           <p className="text-muted-foreground">
-            Premium experiences shouldn't come with premium stress. Competitive
-            packages, transparent pricing, no hidden charges.
+            Refinement without the weight of fuss. Honest pricing, generous
+            inclusions, and a team that anticipates before it's asked.
           </p>
         </div>
 
