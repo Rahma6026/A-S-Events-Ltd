@@ -14,11 +14,11 @@ export const Route = createFileRoute("/")({
   component: Index,
   head: () => ({
     meta: [
-      { title: "Dreamy Daisies — Event Management & Convention Hall" },
+      { title: "AS Events Ltd — Event Management & Convention Hall" },
       {
         name: "description",
         content:
-          "Dreamy Daisies Convention Hall — premium event management for weddings, concerts, conferences and celebrations in London.",
+          "AS Events Ltd Convention Hall — premium event management for weddings, concerts, conferences and celebrations in London.",
       },
     ],
   }),
