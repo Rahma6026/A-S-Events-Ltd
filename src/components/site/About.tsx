@@ -3,7 +3,7 @@ export function About() {
     <section id="about" className="relative py-28 bg-card/40">
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         <div className="reveal space-y-6" data-reveal>
-          <p className="text-xs tracking-[0.3em] uppercase text-gold">— Welcome To Dreamy Daisies</p>
+          <p className="text-xs tracking-[0.3em] uppercase text-gold">— Welcome To AS Events Ltd</p>
           <h2 className="font-display text-4xl md:text-6xl leading-tight">
             Who <span className="italic text-gradient-gold">We Are</span>
           </h2>
