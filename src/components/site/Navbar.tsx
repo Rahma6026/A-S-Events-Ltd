@@ -32,10 +32,10 @@ export function Navbar() {
         <Link to="/" className="flex items-center gap-3 group">
           <div className="relative h-11 w-16 rounded-md border border-gold/40 bg-card flex items-center justify-center overflow-hidden">
             <div className="absolute inset-0 bg-[linear-gradient(110deg,transparent,oklch(0.78_0.13_75/30%),transparent)] bg-[length:200%_100%] animate-shimmer" />
-            <span className="font-display italic text-gold text-sm tracking-wide">dreamy</span>
+            <span className="font-display italic text-gold text-sm tracking-wide">AS</span>
           </div>
           <span className="hidden sm:block font-display text-xl text-gold-soft tracking-wide">
-            Dreamy Daisies
+            AS Events Ltd
           </span>
         </Link>
 

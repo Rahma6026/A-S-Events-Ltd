@@ -59,9 +59,9 @@ export function Contact() {
           <div data-reveal className="reveal-right space-y-8">
             <h3 className="font-display text-3xl text-gold-soft">We'd Love to Hear From You</h3>
             {[
-              { t: "Phone", v: "02036 000 248", icon: "☎" },
-              { t: "Email", v: "admin@dreamydaisies.co.uk", icon: "✉" },
-              { t: "Address", v: "Office-5, 129 Mile End Road, London, England E1 4BG", icon: "✦" },
+              { t: "Phone", v: "020 4569 0196", icon: "☎" },
+              { t: "Email", v: "admin@asevents.co.uk", icon: "✉" },
+              { t: "Address", v: "Registered office: 31 Robinson Road, London, England, E2 9LX", icon: "✦" },
             ].map((c) => (
               <div
                 key={c.t}
