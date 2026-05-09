@@ -41,9 +41,8 @@ export function Hero() {
             className="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] text-foreground animate-fade-up"
             style={{ animationDelay: "0.25s" }}
           >
-            Dreamy Daisies <br />
-            <span className="italic text-gradient-gold">Bespoke</span> <br />
-            Celebrations
+            AS Events <br />
+            <span className="italic text-gradient-gold">Ltd</span>
           </h1>
 
           <p
