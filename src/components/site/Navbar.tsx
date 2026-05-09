@@ -31,11 +31,11 @@ export function Navbar() {
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group">
-          <div className="relative h-11 w-16 rounded-md border border-gold/40 bg-card flex items-center justify-center overflow-hidden">
+          <div className="relative h-12 w-12 md:h-14 md:w-14 rounded-full border border-gold/40 bg-background/80 flex items-center justify-center overflow-hidden shadow-gold">
             <div className="absolute inset-0 bg-[linear-gradient(110deg,transparent,oklch(0.78_0.13_75/30%),transparent)] bg-[length:200%_100%] animate-shimmer" />
-            <span className="font-display italic text-gold text-sm tracking-wide">AS</span>
+            <img src={logo} alt="AS Events Ltd logo" className="relative z-10 h-full w-full object-contain p-1 transition-transform duration-700 group-hover:scale-110" />
           </div>
-          <span className="hidden sm:block font-display text-xl text-gold-soft tracking-wide">
+          <span className="hidden sm:block font-display text-xl text-gradient-gold tracking-wide">
             AS Events Ltd
           </span>
         </Link>
