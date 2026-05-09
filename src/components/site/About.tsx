@@ -12,7 +12,7 @@ export function About() {
             A Sanctuary Where Cherished Moments Quietly Bloom
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            Dreamy Daisies began with a simple intention — to build a hall where
+            AS Events Ltd began with a simple intention — to build a hall where
             people could gather without compromise, surrounded by craftsmanship,
             warm hospitality and unhurried elegance. Years of curating weddings,
             galas and intimate ceremonies have shaped a space that feels equally
