@@ -17,14 +17,14 @@ export function Welcome() {
         <div className="reveal-right space-y-6" data-reveal>
           <p className="text-xs tracking-[0.3em] uppercase text-gold">— Welcome</p>
           <h2 className="font-display text-4xl md:text-6xl leading-tight">
-            Welcome to <span className="italic text-gradient-gold">Dreamy Daisies</span>
+            Welcome to <span className="italic text-gradient-gold">AS Events Ltd</span>
           </h2>
           <div className="gold-divider" />
           <p className="text-lg text-foreground/85 italic font-display">
             Where Every Gathering Unfolds Like a Love Letter
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            At Dreamy Daisies, we believe a celebration is more than an occasion —
+            At AS Events Ltd, we believe a celebration is more than an occasion —
             it is a story written in candlelight, florals and quiet detail.
             Set within a contemporary hall framed by soft architecture and warm
             gold accents, our venue is shaped to hold the moments that matter
