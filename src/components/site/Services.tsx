@@ -5,9 +5,9 @@ const services = [
     desc: "From the first proposal to the final farewell, we orchestrate weddings with quiet precision — vendor curation, day-of choreography and the kind of detail that turns a ceremony into folklore.",
   },
   {
-    title: "Intimate Ceremonies",
-    img: "https://images.unsplash.com/photo-1465495976277-4387d4b0e4a6?w=900&q=80&auto=format&fit=crop",
-    desc: "For elopements, vow renewals and family-only gatherings — soft florals, candlelit settings and an atmosphere that lets the smallest moments feel monumental.",
+    title: "Sports Event Coordination",
+    img: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=900&q=80&auto=format&fit=crop",
+    desc: "Tournaments, leagues, marathons and award ceremonies — fixture scheduling, scoreboards, broadcast-ready production, athlete hospitality and crowd choreography from kick-off to closing whistle.",
   },
   {
     title: "Conferences & Salons",
