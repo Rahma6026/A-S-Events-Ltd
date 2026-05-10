@@ -38,8 +38,14 @@ export function Features() {
       {slides.map((src, i) => (
         <div
           key={i}
-          className="absolute inset-0 bg-no-repeat bg-center bg-cover transition-opacity duration-[1500ms] ease-in-out"
-          style={{ backgroundImage: `url(${src})`, opacity: active === i ? 1 : 0 }}
+          className="absolute inset-0 transition-opacity duration-[1500ms] ease-in-out"
+          style={{
+            backgroundImage: `url(${src})`,
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundRepeat: "no-repeat",
+            opacity: active === i ? 1 : 0,
+          }}
           aria-hidden="true"
         />
       ))}
