@@ -19,10 +19,10 @@ export function About() {
             grand and grounded.
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            Our name draws from the daisy — modest, luminous, enduring. It is
-            our promise that every event we host will carry that same spirit:
-            understated beauty, considered detail, and joy that lingers long
-            after the last guest departs.
+            Our name reflects who we are — a team built on service, sincerity
+            and standards. It is our promise that every event we host will
+            carry that same spirit: understated beauty, considered detail, and
+            joy that lingers long after the last guest departs.
           </p>
           <a
             href="#services"
