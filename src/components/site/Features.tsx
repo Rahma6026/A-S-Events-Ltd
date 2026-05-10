@@ -22,15 +22,27 @@ const features = [
 ];
 
 import featuresBg from "@/assets/features-bg.png";
+import featuresBg2 from "@/assets/features-bg-2.png";
+import { useEffect, useState } from "react";
+
+const slides = [featuresBg, featuresBg2];
 
 export function Features() {
+  const [active, setActive] = useState(0);
+  useEffect(() => {
+    const id = setInterval(() => setActive((i) => (i + 1) % slides.length), 5000);
+    return () => clearInterval(id);
+  }, []);
   return (
     <section className="relative py-28 overflow-hidden">
-      <div
-        className="absolute inset-0 bg-no-repeat bg-center bg-cover"
-        style={{ backgroundImage: `url(${featuresBg})`, backgroundSize: "cover" }}
-        aria-hidden="true"
-      />
+      {slides.map((src, i) => (
+        <div
+          key={i}
+          className="absolute inset-0 bg-no-repeat bg-center bg-cover transition-opacity duration-[1500ms] ease-in-out"
+          style={{ backgroundImage: `url(${src})`, opacity: active === i ? 1 : 0 }}
+          aria-hidden="true"
+        />
+      ))}
       <div className="absolute inset-0 bg-background/80" aria-hidden="true" />
       <div className="container relative mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16 reveal" data-reveal>
