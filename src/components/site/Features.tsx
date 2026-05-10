@@ -36,7 +36,7 @@ export function Features() {
         <div className="text-center max-w-2xl mx-auto mb-16 reveal" data-reveal>
           <p className="text-xs tracking-[0.3em] uppercase text-gold">— Features</p>
           <h2 className="font-display text-4xl md:text-6xl mt-4">
-            Why Choose <span className="italic text-gradient-gold">AS Events Ltd?</span>
+            Why Choose <span className="italic text-gradient-gold">A S Events Ltd?</span>
           </h2>
           <div className="gold-divider mx-auto my-6" />
           <p className="text-muted-foreground">

@@ -3,7 +3,7 @@ export function About() {
     <section id="about" className="relative py-28 bg-card/40">
       <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         <div className="reveal space-y-6" data-reveal>
-          <p className="text-xs tracking-[0.3em] uppercase text-gold">— Welcome To AS Events Ltd</p>
+          <p className="text-xs tracking-[0.3em] uppercase text-gold">— Welcome To A S Events Ltd</p>
           <h2 className="font-display text-4xl md:text-6xl leading-tight">
             Who <span className="italic text-gradient-gold">We Are</span>
           </h2>
@@ -12,7 +12,7 @@ export function About() {
             A Sanctuary Where Cherished Moments Quietly Bloom
           </p>
           <p className="text-muted-foreground leading-relaxed">
-            AS Events Ltd began with a simple intention — to build a hall where
+            A S Events Ltd began with a simple intention — to build a hall where
             people could gather without compromise, surrounded by craftsmanship,
             warm hospitality and unhurried elegance. Years of curating weddings,
             galas and intimate ceremonies have shaped a space that feels equally
