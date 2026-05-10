@@ -30,10 +30,10 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group" aria-label="AS Events Ltd — Home">
+        <Link to="/" className="flex items-center gap-3 group" aria-label="A S Events Ltd — Home">
           <img
             src={logo}
-            alt="AS Events Ltd logo"
+            alt="A S Events Ltd logo"
             className="h-12 md:h-14 w-auto object-contain drop-shadow-[0_2px_10px_rgba(212,175,55,0.25)] transition-transform duration-500 group-hover:scale-105"
           />
         </Link>
