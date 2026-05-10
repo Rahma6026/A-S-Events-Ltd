@@ -27,11 +27,11 @@ export function Features() {
   return (
     <section className="relative py-28 overflow-hidden">
       <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{ backgroundImage: `url(${featuresBg})` }}
+        className="absolute inset-0 bg-no-repeat bg-center bg-cover"
+        style={{ backgroundImage: `url(${featuresBg})`, backgroundSize: "cover" }}
         aria-hidden="true"
       />
-      <div className="absolute inset-0 bg-background/85" aria-hidden="true" />
+      <div className="absolute inset-0 bg-background/80" aria-hidden="true" />
       <div className="container relative mx-auto px-6">
         <div className="text-center max-w-2xl mx-auto mb-16 reveal" data-reveal>
           <p className="text-xs tracking-[0.3em] uppercase text-gold">— Features</p>
