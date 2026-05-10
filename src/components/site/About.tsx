@@ -1,7 +1,20 @@
+import aboutBg from "@/assets/about-bg.png";
+
 export function About() {
   return (
-    <section id="about" className="relative py-28 bg-card/40">
-      <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+    <section id="about" className="relative py-28 overflow-hidden">
+      <div
+        className="absolute inset-0"
+        style={{
+          backgroundImage: `url(${aboutBg})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+        }}
+        aria-hidden="true"
+      />
+      <div className="absolute inset-0 bg-background/85" aria-hidden="true" />
+      <div className="container relative mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
         <div className="reveal space-y-6" data-reveal>
           <p className="text-xs tracking-[0.3em] uppercase text-gold">— Welcome To A S Events Ltd</p>
           <h2 className="font-display text-4xl md:text-6xl leading-tight">
