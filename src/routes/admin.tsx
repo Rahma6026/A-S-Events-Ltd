@@ -55,7 +55,7 @@ function AdminPage() {
 
   const onLogin = (e: React.FormEvent) => {
     e.preventDefault();
-    if (password === "admin123") {
+    if (password === "united@web") {
       setIsAuthenticated(true);
       toast.success("Logged in successfully");
     } else {
