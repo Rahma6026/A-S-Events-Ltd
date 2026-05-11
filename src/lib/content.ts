@@ -8,6 +8,7 @@ export const ServiceSchema = z.object({
   title: z.string(),
   img: z.string(),
   desc: z.string(),
+  url: z.string().optional(),
 });
 
 export const FeatureSchema = z.object({

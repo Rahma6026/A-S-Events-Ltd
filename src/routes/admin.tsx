@@ -203,10 +203,11 @@ function AdminPage() {
               <h2 className="text-xl font-display text-gold">Service Cards</h2>
               <button
                 type="button"
-                onClick={() => appendService({ id: Date.now().toString(), title: "New Service", desc: "Description...", img: "https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80&auto=format&fit=crop" })}
-                className="text-xs bg-gold/10 text-gold border border-gold/30 px-4 py-2 rounded-full hover:bg-gold hover:text-primary-foreground transition"
+                onClick={() => appendService({ id: Date.now().toString(), title: "New Service", desc: "Description...", img: "https://images.unsplash.com/photo-1519741497674-611481863552?w=900&q=80&auto=format&fit=crop", url: "#" })}
+                className="flex items-center gap-2 text-xs bg-gold/10 text-gold border border-gold/30 px-5 py-2.5 rounded-full hover:bg-gold hover:text-primary-foreground transition-all font-bold group"
               >
-                + Add Service
+                <span className="text-lg leading-none group-hover:rotate-90 transition-transform">+</span>
+                <span>Add Service Card</span>
               </button>
             </div>
             
@@ -216,22 +217,26 @@ function AdminPage() {
                   <button
                     type="button"
                     onClick={() => removeService(index)}
-                    className="absolute top-4 right-4 text-destructive opacity-0 group-hover:opacity-100 transition"
+                    className="absolute top-4 right-4 text-destructive opacity-0 group-hover:opacity-100 transition px-2 py-1 hover:bg-destructive/10 rounded text-xs"
                   >
-                    Remove
+                    Delete
                   </button>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <label className="text-xs uppercase tracking-widest text-muted-foreground">Title</label>
-                      <input {...register(`services.${index}.title`)} className="w-full bg-background border border-border p-2 rounded" />
+                      <input {...register(`services.${index}.title`)} className="w-full bg-background border border-border p-2 rounded focus:border-gold outline-none" />
                     </div>
                     <div className="space-y-2">
                       <label className="text-xs uppercase tracking-widest text-muted-foreground">Image URL</label>
-                      <input {...register(`services.${index}.img`)} className="w-full bg-background border border-border p-2 rounded" />
+                      <input {...register(`services.${index}.img`)} className="w-full bg-background border border-border p-2 rounded focus:border-gold outline-none" />
+                    </div>
+                    <div className="md:col-span-2 space-y-2">
+                      <label className="text-xs uppercase tracking-widest text-muted-foreground">Button Link / URL (Optional)</label>
+                      <input {...register(`services.${index}.url`)} placeholder="e.g. #contact or https://..." className="w-full bg-background border border-border p-2 rounded focus:border-gold outline-none" />
                     </div>
                     <div className="md:col-span-2 space-y-2">
                       <label className="text-xs uppercase tracking-widest text-muted-foreground">Description</label>
-                      <textarea {...register(`services.${index}.desc`)} rows={2} className="w-full bg-background border border-border p-2 rounded resize-none" />
+                      <textarea {...register(`services.${index}.desc`)} rows={2} className="w-full bg-background border border-border p-2 rounded resize-none focus:border-gold outline-none" />
                     </div>
                   </div>
                 </div>

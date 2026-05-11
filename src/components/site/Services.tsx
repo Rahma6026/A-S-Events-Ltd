@@ -30,31 +30,43 @@ export function Services() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((s, i) => (
-            <article
-              key={s.id}
-              data-reveal
-              className="reveal-zoom group relative bg-card/60 border border-border rounded-sm overflow-hidden hover-lift"
-              style={{ transitionDelay: `${i * 80}ms` }}
-            >
-              <div className="overflow-hidden aspect-[4/3]">
-                <img
-                  src={s.img}
-                  alt={s.title}
-                  className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-[1.4s]"
-                />
+          {services.map((s, i) => {
+            const CardContent = (
+              <article
+                className="group relative bg-card/60 border border-border rounded-sm overflow-hidden hover-lift h-full"
+                style={{ transitionDelay: `${i * 80}ms` }}
+              >
+                <div className="overflow-hidden aspect-[4/3]">
+                  <img
+                    src={s.img}
+                    alt={s.title}
+                    className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-[1.4s]"
+                  />
+                </div>
+                <div className="p-7">
+                  <h3 className="font-display text-2xl text-gold-soft mb-3 underline-grow inline-block">
+                    {s.title}
+                  </h3>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+                </div>
+                <div className="absolute top-5 right-5 h-10 w-10 rounded-full border border-gold/40 flex items-center justify-center text-gold opacity-0 group-hover:opacity-100 transition duration-500 translate-x-2 group-hover:translate-x-0">
+                  →
+                </div>
+              </article>
+            );
+
+            return (
+              <div key={s.id} data-reveal className="reveal-zoom">
+                {s.url ? (
+                  <a href={s.url} className="block h-full cursor-pointer">
+                    {CardContent}
+                  </a>
+                ) : (
+                  CardContent
+                )}
               </div>
-              <div className="p-7">
-                <h3 className="font-display text-2xl text-gold-soft mb-3 underline-grow inline-block">
-                  {s.title}
-                </h3>
-                <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
-              </div>
-              <div className="absolute top-5 right-5 h-10 w-10 rounded-full border border-gold/40 flex items-center justify-center text-gold opacity-0 group-hover:opacity-100 transition duration-500 translate-x-2 group-hover:translate-x-0">
-                →
-              </div>
-            </article>
-          ))}
+            );
+          })}
         </div>
 
         {/* Add-ons */}
