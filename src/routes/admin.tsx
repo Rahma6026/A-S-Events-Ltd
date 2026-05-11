@@ -112,6 +112,15 @@ function AdminPage() {
           <h1 className="font-display text-2xl text-gradient-gold">Admin Dashboard</h1>
           <div className="flex gap-4">
             <button
+              onClick={() => {
+                reset(siteData || undefined);
+                toast.success("Changes reverted");
+              }}
+              className="px-6 py-2 border border-border text-foreground text-xs tracking-widest uppercase hover:bg-muted transition rounded-full"
+            >
+              Reset
+            </button>
+            <button
               onClick={handleSubmit(onSubmit)}
               disabled={isSubmitting}
               className="px-6 py-2 bg-gold text-primary-foreground text-xs tracking-widest uppercase hover:bg-gold-soft transition rounded-full font-bold"
@@ -216,7 +225,17 @@ function AdminPage() {
                 <div key={field.id} className="p-6 bg-background/50 border border-border rounded relative group">
                   <button
                     type="button"
-                    onClick={() => removeService(index)}
+                    onClick={() => {
+                      const item = serviceFields[index];
+                      removeService(index);
+                      toast("Service card removed", {
+                        description: `"${item.title}" has been deleted.`,
+                        action: {
+                          label: "Undo",
+                          onClick: () => appendService(item),
+                        },
+                      });
+                    }}
                     className="absolute top-4 right-4 text-destructive opacity-0 group-hover:opacity-100 transition px-2 py-1 hover:bg-destructive/10 rounded text-xs"
                   >
                     Delete
@@ -237,6 +256,59 @@ function AdminPage() {
                     <div className="md:col-span-2 space-y-2">
                       <label className="text-xs uppercase tracking-widest text-muted-foreground">Description</label>
                       <textarea {...register(`services.${index}.desc`)} rows={2} className="w-full bg-background border border-border p-2 rounded resize-none focus:border-gold outline-none" />
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Features Section */}
+          <section className="p-8 bg-card border border-border rounded-lg space-y-8">
+            <div className="flex items-center justify-between">
+              <h2 className="text-xl font-display text-gold">Feature Cards</h2>
+              <button
+                type="button"
+                onClick={() => appendFeature({ id: Date.now().toString(), title: "New Feature", desc: "Description...", icon: "✦" })}
+                className="flex items-center gap-2 text-xs bg-gold/10 text-gold border border-gold/30 px-5 py-2.5 rounded-full hover:bg-gold hover:text-primary-foreground transition-all font-bold group"
+              >
+                <span className="text-lg leading-none group-hover:rotate-90 transition-transform">+</span>
+                <span>Add Feature Card</span>
+              </button>
+            </div>
+            
+            <div className="grid gap-6">
+              {featureFields.map((field, index) => (
+                <div key={field.id} className="p-6 bg-background/50 border border-border rounded relative group">
+                  <button
+                    type="button"
+                    onClick={() => {
+                      const item = featureFields[index];
+                      removeFeature(index);
+                      toast("Feature card removed", {
+                        description: `"${item.title}" has been deleted.`,
+                        action: {
+                          label: "Undo",
+                          onClick: () => appendFeature(item),
+                        },
+                      });
+                    }}
+                    className="absolute top-4 right-4 text-destructive opacity-0 group-hover:opacity-100 transition px-2 py-1 hover:bg-destructive/10 rounded text-xs"
+                  >
+                    Delete
+                  </button>
+                  <div className="grid md:grid-cols-2 gap-4">
+                    <div className="space-y-2">
+                      <label className="text-xs uppercase tracking-widest text-muted-foreground">Title</label>
+                      <input {...register(`features.${index}.title`)} className="w-full bg-background border border-border p-2 rounded focus:border-gold outline-none" />
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-xs uppercase tracking-widest text-muted-foreground">Icon (Symbol)</label>
+                      <input {...register(`features.${index}.icon`)} className="w-full bg-background border border-border p-2 rounded focus:border-gold outline-none" />
+                    </div>
+                    <div className="md:col-span-2 space-y-2">
+                      <label className="text-xs uppercase tracking-widest text-muted-foreground">Description</label>
+                      <textarea {...register(`features.${index}.desc`)} rows={2} className="w-full bg-background border border-border p-2 rounded resize-none focus:border-gold outline-none" />
                     </div>
                   </div>
                 </div>
