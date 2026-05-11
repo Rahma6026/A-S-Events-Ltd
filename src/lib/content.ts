@@ -157,6 +157,16 @@ let siteContent: SiteContent = {
   ],
 };
 
+import nodemailer from "nodemailer";
+
+export const ContactFormSchema = z.object({
+  name: z.string().min(2),
+  email: z.string().email(),
+  message: z.string().min(10),
+});
+
+export type ContactFormData = z.infer<typeof ContactFormSchema>;
+
 // Server Functions
 export const getContent = createServerFn({ method: "GET" }).handler(async () => {
   return siteContent;
@@ -166,4 +176,43 @@ export const updateContent = createServerFn({ method: "POST" })
   .handler(async (ctx: any) => {
     siteContent = ctx.data as SiteContent;
     return { success: true };
+  });
+
+export const sendEmail = createServerFn({ method: "POST" })
+  .handler(async (ctx: any) => {
+    const data = ctx.data as ContactFormData;
+    const validatedData = ContactFormSchema.parse(data);
+    const transporter = nodemailer.createTransport({
+      host: "mail.aseventlimited.com",
+      port: 465,
+      secure: true,
+      auth: {
+        user: "admin@aseventlimited.com",
+        pass: "London@2026@@",
+      },
+    });
+
+    try {
+      await transporter.sendMail({
+        from: `"A S Events Ltd Contact" <admin@aseventlimited.com>`,
+        to: "admin@aseventlimited.com",
+        replyTo: validatedData.email,
+        subject: `New Inquiry from ${validatedData.name}`,
+        text: `Name: ${validatedData.name}\nEmail: ${validatedData.email}\n\nMessage:\n${validatedData.message}`,
+        html: `
+          <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; border: 1px solid #e2e8f0; padding: 20px; border-radius: 8px;">
+            <h2 style="color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px;">New Website Inquiry</h2>
+            <p><strong>Name:</strong> ${validatedData.name}</p>
+            <p><strong>Email:</strong> ${validatedData.email}</p>
+            <hr style="border: 0; border-top: 1px solid #e2e8f0; margin: 20px 0;" />
+            <p><strong>Message:</strong></p>
+            <p style="white-space: pre-wrap;">${validatedData.message}</p>
+          </div>
+        `,
+      });
+      return { success: true };
+    } catch (error) {
+      console.error("Failed to send email:", error);
+      throw new Error("Failed to send email");
+    }
   });

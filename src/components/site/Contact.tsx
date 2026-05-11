@@ -1,9 +1,36 @@
 import { useState } from "react";
 import { useContent } from "./ContentProvider";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { ContactFormSchema, type ContactFormData, sendEmail } from "@/lib/content";
+import { toast } from "sonner";
 
 export function Contact() {
-  const [sent, setSent] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { contact } = useContent();
+
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm<ContactFormData>({
+    resolver: zodResolver(ContactFormSchema),
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    setIsSubmitting(true);
+    try {
+      await (sendEmail as any)({ data });
+      toast.success("Message sent successfully! We'll be in touch soon.");
+      reset();
+    } catch (error) {
+      console.error("Failed to send message:", error);
+      toast.error("Failed to send message. Please try again later.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   return (
     <section id="contact" className="relative py-28 bg-card/40 overflow-hidden">
@@ -26,36 +53,37 @@ export function Contact() {
           <form
             data-reveal
             className="reveal-left space-y-5 bg-background/60 border border-border rounded-sm p-8 backdrop-blur-sm"
-            onSubmit={(e) => {
-              e.preventDefault();
-              setSent(true);
-              setTimeout(() => setSent(false), 4000);
-            }}
+            onSubmit={handleSubmit(onSubmit)}
           >
             <div className="grid sm:grid-cols-2 gap-5">
-              <input
-                required
-                placeholder="Name"
-                className="w-full bg-input/40 border border-border focus:border-gold focus:ring-2 focus:ring-gold/30 outline-none px-4 py-3 rounded-sm transition"
-              />
-              <input
-                required
-                type="email"
-                placeholder="Email Address"
-                className="w-full bg-input/40 border border-border focus:border-gold focus:ring-2 focus:ring-gold/30 outline-none px-4 py-3 rounded-sm transition"
-              />
+              <div className="space-y-1">
+                <input
+                  {...register("name")}
+                  placeholder="Name"
+                  className={`w-full bg-input/40 border ${errors.name ? 'border-destructive' : 'border-border'} focus:border-gold focus:ring-2 focus:ring-gold/30 outline-none px-4 py-3 rounded-sm transition`}
+                />
+              </div>
+              <div className="space-y-1">
+                <input
+                  {...register("email")}
+                  type="email"
+                  placeholder="Email Address"
+                  className={`w-full bg-input/40 border ${errors.email ? 'border-destructive' : 'border-border'} focus:border-gold focus:ring-2 focus:ring-gold/30 outline-none px-4 py-3 rounded-sm transition`}
+                />
+              </div>
             </div>
             <textarea
-              required
+              {...register("message")}
               placeholder="Tell us about your event..."
               rows={6}
-              className="w-full bg-input/40 border border-border focus:border-gold focus:ring-2 focus:ring-gold/30 outline-none px-4 py-3 rounded-sm transition resize-none"
+              className={`w-full bg-input/40 border ${errors.message ? 'border-destructive' : 'border-border'} focus:border-gold focus:ring-2 focus:ring-gold/30 outline-none px-4 py-3 rounded-sm transition resize-none`}
             />
             <button
               type="submit"
-              className="w-full px-8 py-4 bg-gold text-primary-foreground tracking-widest uppercase text-sm hover-lift rounded-sm relative overflow-hidden"
+              disabled={isSubmitting}
+              className="w-full px-8 py-4 bg-gold text-primary-foreground tracking-widest uppercase text-sm hover-lift rounded-sm relative overflow-hidden disabled:opacity-70"
             >
-              <span className="relative z-10">{sent ? "Success! ✦ We'll be in touch" : "Submit"}</span>
+              <span className="relative z-10">{isSubmitting ? "Sending..." : "Submit"}</span>
             </button>
           </form>
 
