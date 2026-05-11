@@ -87,7 +87,7 @@ let siteContent: SiteContent = {
     image: "https://images.unsplash.com/photo-1511795409834-ef04bbd61622?w=900&q=80&auto=format&fit=crop",
   },
   contact: {
-    email: "admin@asevents.co.uk",
+    email: "admin@aseventlimited.com",
     phone: "020 4569 0196",
     address: "Registered office: 31 Robinson Road, London, England, E2 9LX",
   },

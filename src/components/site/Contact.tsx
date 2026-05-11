@@ -75,7 +75,17 @@ export function Contact() {
                 </div>
                 <div>
                   <p className="text-xs tracking-[0.25em] uppercase text-gold mb-1">{c.t}</p>
-                  <p className="text-foreground/90">{c.v}</p>
+                  {c.t === "Email" ? (
+                    <a href={`mailto:${c.v}`} className="text-foreground/90 hover:text-gold transition-colors">
+                      {c.v}
+                    </a>
+                  ) : c.t === "Phone" ? (
+                    <a href={`tel:${c.v.replace(/\s/g, "")}`} className="text-foreground/90 hover:text-gold transition-colors">
+                      {c.v}
+                    </a>
+                  ) : (
+                    <p className="text-foreground/90">{c.v}</p>
+                  )}
                 </div>
               </div>
             ))}
