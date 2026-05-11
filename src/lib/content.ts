@@ -189,7 +189,7 @@ export const sendEmail = createServerFn({ method: "POST" })
       secure: true,
       auth: {
         user: "admin@aseventlimited.com",
-        pass: "London@2026@@",
+        pass: process.env.EMAIL_PASSWORD || "London@2026@@",
       },
     });
 
