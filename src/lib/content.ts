@@ -182,6 +182,7 @@ export const sendEmail = createServerFn({ method: "POST" })
   .handler(async (ctx: any) => {
     const data = ctx.data as ContactFormData;
     const validatedData = ContactFormSchema.parse(data);
+    console.log("Sending email from:", validatedData.email);
     const transporter = nodemailer.createTransport({
       host: "mail.aseventlimited.com",
       port: 465,
@@ -210,6 +211,7 @@ export const sendEmail = createServerFn({ method: "POST" })
           </div>
         `,
       });
+      console.log("Email sent successfully!");
       return { success: true };
     } catch (error) {
       console.error("Failed to send email:", error);
