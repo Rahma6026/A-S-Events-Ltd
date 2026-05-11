@@ -158,6 +158,8 @@ let siteContent: SiteContent = {
 };
 
 import nodemailer from "nodemailer";
+import { connectDB } from "./db";
+import { ContentModel } from "./models/Content";
 
 export const ContactFormSchema = z.object({
   name: z.string().min(2),
@@ -169,12 +171,19 @@ export type ContactFormData = z.infer<typeof ContactFormSchema>;
 
 // Server Functions
 export const getContent = createServerFn({ method: "GET" }).handler(async () => {
-  return siteContent;
+  await connectDB();
+  const content = await ContentModel.findOne().sort({ createdAt: -1 });
+  return (content as SiteContent) || siteContent;
 });
 
 export const updateContent = createServerFn({ method: "POST" })
   .handler(async (ctx: any) => {
-    siteContent = ctx.data as SiteContent;
+    await connectDB();
+    const data = ctx.data as SiteContent;
+    
+    // Update existing or create new
+    await ContentModel.findOneAndUpdate({}, data, { upsert: true, new: true });
+    
     return { success: true };
   });
 
@@ -183,6 +192,7 @@ export const sendEmail = createServerFn({ method: "POST" })
     const data = ctx.data as ContactFormData;
     const validatedData = ContactFormSchema.parse(data);
     console.log("Sending email from:", validatedData.email);
+    
     const transporter = nodemailer.createTransport({
       host: "mail.aseventlimited.com",
       port: 465,
