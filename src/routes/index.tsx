@@ -9,8 +9,11 @@ import { Features } from "@/components/site/Features";
 import { Contact } from "@/components/site/Contact";
 import { Footer } from "@/components/site/Footer";
 import { useRevealAll } from "@/hooks/use-reveal";
+import { getContent } from "@/lib/content";
+import { ContentProvider } from "@/components/site/ContentProvider";
 
 export const Route = createFileRoute("/")({
+  loader: async () => await getContent(),
   component: Index,
   head: () => ({
     meta: [
@@ -25,20 +28,23 @@ export const Route = createFileRoute("/")({
 });
 
 function Index() {
+  const content = Route.useLoaderData();
   useRevealAll();
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <Navbar />
-      <main>
-        <Hero />
-        <Welcome />
-        <About />
-        <Services />
-        <Process />
-        <Features />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
+    <ContentProvider content={content}>
+      <div className="min-h-screen bg-background text-foreground">
+        <Navbar />
+        <main>
+          <Hero />
+          <Welcome />
+          <About />
+          <Services />
+          <Process />
+          <Features />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
+    </ContentProvider>
   );
 }

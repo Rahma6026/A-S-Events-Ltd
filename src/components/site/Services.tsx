@@ -1,35 +1,4 @@
-const services = [
-  {
-    title: "Signature Weddings",
-    img: "https://images.unsplash.com/photo-1519225421980-715cb0215aed?w=900&q=80&auto=format&fit=crop",
-    desc: "From the first proposal to the final farewell, we orchestrate weddings with quiet precision — vendor curation, day-of choreography and the kind of detail that turns a ceremony into folklore.",
-  },
-  {
-    title: "Sports Event Coordination",
-    img: "https://images.unsplash.com/photo-1461896836934-ffe607ba8211?w=900&q=80&auto=format&fit=crop",
-    desc: "Tournaments, leagues, marathons and award ceremonies — fixture scheduling, scoreboards, broadcast-ready production, athlete hospitality and crowd choreography from kick-off to closing whistle.",
-  },
-  {
-    title: "Conferences & Salons",
-    img: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=900&q=80&auto=format&fit=crop",
-    desc: "Refined corporate gatherings, panels and creative workshops — full AV, fibre Wi-Fi, technical direction and seating layouts tailored to dialogue.",
-  },
-  {
-    title: "Concerts & Recitals",
-    img: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=900&q=80&auto=format&fit=crop",
-    desc: "An elevated stage, mastered acoustics and architectural lighting — built for chamber recitals, acoustic sets and full-band productions alike.",
-  },
-  {
-    title: "Galas & Award Nights",
-    img: "https://images.unsplash.com/photo-1530023367847-a683933f4172?w=900&q=80&auto=format&fit=crop",
-    desc: "Black-tie evenings deserve a setting to match — bespoke staging, branded signage, LED scenography and seating that honours every guest of the night.",
-  },
-  {
-    title: "Editorial Photography & Film",
-    img: "https://images.unsplash.com/photo-1554080353-a576cf803bda?w=900&q=80&auto=format&fit=crop",
-    desc: "Cinematic stills and motion — pre-event portraits, full-day coverage, aerial work, same-day reels and considered live streaming.",
-  },
-];
+import { useContent } from "./ContentProvider";
 
 const addOns = [
   "Multi-cuisine catering",
@@ -42,6 +11,8 @@ const addOns = [
 ];
 
 export function Services() {
+  const { services } = useContent();
+
   return (
     <section id="services" className="relative py-28">
       <div className="container mx-auto px-6">
@@ -61,7 +32,7 @@ export function Services() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {services.map((s, i) => (
             <article
-              key={s.title}
+              key={s.id}
               data-reveal
               className="reveal-zoom group relative bg-card/60 border border-border rounded-sm overflow-hidden hover-lift"
               style={{ transitionDelay: `${i * 80}ms` }}

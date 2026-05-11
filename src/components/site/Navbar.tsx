@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "@tanstack/react-router";
 import logo from "@/assets/logo.png";
+import { useContent } from "./ContentProvider";
 
 const links = [
   { href: "#home", label: "Home" },
@@ -13,6 +14,7 @@ const links = [
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { brandName } = useContent();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 30);
@@ -30,10 +32,10 @@ export function Navbar() {
       }`}
     >
       <div className="container mx-auto px-6 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group" aria-label="A S Events Ltd — Home">
+        <Link to="/" className="flex items-center gap-3 group" aria-label={`${brandName} — Home`}>
           <img
             src={logo}
-            alt="A S Events Ltd logo"
+            alt={`${brandName} logo`}
             className="h-12 md:h-14 w-auto object-contain drop-shadow-[0_2px_10px_rgba(212,175,55,0.25)] transition-transform duration-500 group-hover:scale-105"
           />
         </Link>

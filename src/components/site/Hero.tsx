@@ -1,4 +1,8 @@
+import { useContent } from "./ContentProvider";
+
 export function Hero() {
+  const { hero } = useContent();
+  
   return (
     <section
       id="home"
@@ -6,6 +10,7 @@ export function Hero() {
     >
       {/* video background */}
       <video
+        key={hero.videoUrl}
         className="absolute inset-0 w-full h-full object-cover z-0"
         autoPlay
         muted
@@ -15,7 +20,7 @@ export function Hero() {
         poster="https://images.unsplash.com/photo-1519741497674-611481863552?w=1600&q=70&auto=format&fit=crop"
       >
         <source
-          src="https://assets.mixkit.co/videos/5213/5213-720.mp4"
+          src={hero.videoUrl}
           type="video/mp4"
         />
       </video>
@@ -34,24 +39,22 @@ export function Hero() {
             className="text-xs md:text-sm tracking-[0.3em] uppercase text-gold animate-fade-down"
             style={{ animationDelay: "0.1s" }}
           >
-            ✦ Crafted Moments · Curated Beautifully
+            {hero.subtitle}
           </p>
 
           <h1
             className="font-display text-5xl md:text-7xl lg:text-8xl leading-[1.05] text-foreground animate-fade-up"
             style={{ animationDelay: "0.25s" }}
           >
-            A S Events <br />
-            <span className="italic text-gradient-gold">Ltd</span>
+            {hero.titlePart1} <br />
+            <span className="italic text-gradient-gold">{hero.titlePart2}</span>
           </h1>
 
           <p
             className="text-lg text-muted-foreground max-w-lg animate-fade-up"
             style={{ animationDelay: "0.45s" }}
           >
-            A timeless convention hall and atelier of event artisans — composing
-            weddings, soirées and milestones into heirloom-worthy memories,
-            petal by petal.
+            {hero.description}
           </p>
 
           <div
@@ -107,7 +110,7 @@ export function Hero() {
               </defs>
               <text fill="currentColor" fontSize="11" letterSpacing="2">
                 <textPath href="#circlePath">
-                  ✦ ATELIER OF CELEBRATIONS ✦ A S EVENTS LTD ✦ ATELIER OF CELEBRATIONS ✦ A S EVENTS LTD ✦
+                  {hero.circularText}
                 </textPath>
               </text>
             </svg>

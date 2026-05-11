@@ -1,38 +1,19 @@
-const features = [
-  {
-    title: "A Hall for Every Occasion",
-    desc: "From candlelit dinners for thirty to grand productions for a thousand — modular layouts, considered packages, no compromise.",
-    icon: "❀",
-  },
-  {
-    title: "Quietly Modern Facilities",
-    desc: "Climate-controlled interiors, generous parking, suite-style green rooms, mastered acoustics, layered lighting and discreet security.",
-    icon: "✦",
-  },
-  {
-    title: "Effortless Arrival",
-    desc: "Set within easy reach of major roads and transit — your guests cross the threshold composed, never rushed.",
-    icon: "❖",
-  },
-  {
-    title: "Couture Décor & Styling",
-    desc: "From heritage motifs to minimalist editorial — staging, florals, lighting and entrances designed in conversation with your story.",
-    icon: "✿",
-  },
-];
-
 import featuresBg from "@/assets/features-bg.png";
 import featuresBg2 from "@/assets/features-bg-2.png";
 import { useEffect, useState } from "react";
+import { useContent } from "./ContentProvider";
 
 const slides = [featuresBg, featuresBg2];
 
 export function Features() {
+  const { features } = useContent();
   const [active, setActive] = useState(0);
+
   useEffect(() => {
     const id = setInterval(() => setActive((i) => (i + 1) % slides.length), 5000);
     return () => clearInterval(id);
   }, []);
+
   return (
     <section className="relative py-28 overflow-hidden">
       {slides.map((src, i) => (
@@ -66,7 +47,7 @@ export function Features() {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {features.map((f, i) => (
             <div
-              key={f.title}
+              key={f.id}
               data-reveal
               className="reveal group relative p-8 bg-card/60 border border-border rounded-sm hover-lift overflow-hidden"
               style={{ transitionDelay: `${i * 100}ms` }}

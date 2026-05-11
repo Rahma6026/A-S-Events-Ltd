@@ -1,9 +1,13 @@
+import { useContent } from "./ContentProvider";
+
 export function Footer() {
+  const { brandName } = useContent();
+
   return (
     <footer id="career" className="relative pt-20 pb-10 border-t border-border bg-background">
       <div className="container mx-auto px-6 grid md:grid-cols-3 gap-10">
         <div>
-          <h3 className="font-display text-3xl text-gradient-gold">A S Events Ltd</h3>
+          <h3 className="font-display text-3xl text-gradient-gold">{brandName}</h3>
           <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
             We do not simply offer a venue — we compose experiences. Your
             celebration is not a date on a calendar; it is a chapter, written in
@@ -38,7 +42,7 @@ export function Footer() {
         </div>
       </div>
       <div className="container mx-auto px-6 mt-12 pt-6 border-t border-border/60 flex flex-wrap justify-between gap-4 text-xs text-muted-foreground">
-        <p>© {new Date().getFullYear()} A S Events Ltd. All rights reserved.</p>
+        <p>© {new Date().getFullYear()} {brandName}. All rights reserved.</p>
         <p className="tracking-widest uppercase">✦ Where Every Moment Blooms ✦</p>
       </div>
     </footer>

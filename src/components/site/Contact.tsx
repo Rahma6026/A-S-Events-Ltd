@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useContent } from "./ContentProvider";
 
 export function Contact() {
   const [sent, setSent] = useState(false);
+  const { contact } = useContent();
+
   return (
     <section id="contact" className="relative py-28 bg-card/40 overflow-hidden">
       <div className="absolute -top-32 left-1/2 -translate-x-1/2 h-96 w-96 rounded-full bg-gold/10 blur-3xl" />
@@ -59,9 +62,9 @@ export function Contact() {
           <div data-reveal className="reveal-right space-y-8">
             <h3 className="font-display text-3xl text-gold-soft">We'd Love to Hear From You</h3>
             {[
-              { t: "Phone", v: "020 4569 0196", icon: "☎" },
-              { t: "Email", v: "admin@asevents.co.uk", icon: "✉" },
-              { t: "Address", v: "Registered office: 31 Robinson Road, London, England, E2 9LX", icon: "✦" },
+              { t: "Phone", v: contact.phone, icon: "☎" },
+              { t: "Email", v: contact.email, icon: "✉" },
+              { t: "Address", v: contact.address, icon: "✦" },
             ].map((c) => (
               <div
                 key={c.t}
